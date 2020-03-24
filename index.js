@@ -294,11 +294,13 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  let runnerShirtSizes = []
-  runners.filter(function(shirts){
-    return shirts.shirt_size
-  })
-  return runnerShirtSizes
+  let runnersWithShirtSize = []
+ runners.filter(function(person){
+    if (person.shirt_size === tShirtSize){
+      runnersWithShirtSize.push(person)
+    }
+  });
+  return runnersWithShirtSize
 }
 
 /**
